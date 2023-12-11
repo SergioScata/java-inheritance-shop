@@ -45,9 +45,14 @@ public class Carrello {
                         BigDecimal iva = scan.nextBigDecimal();
                         System.out.println("Inserisci le dimensioni del televisore in pollici: ");
                         int size = Integer.parseInt(scan.next());
-                        System.out.println("E' un televisore smart?");
+                        System.out.println("E' un televisore smart?(y/n)");
                         String smartOrNot = scan.nextLine();
-                        Televisori tv = new Televisori(name, description,price, iva, size,smartOrNot);
+                        if (smartOrNot.equals("y")){
+                            smartOrNot = "smart";
+                        } else if (smartOrNot.equals("n")) {
+                            smartOrNot = "non smart";
+                        }
+                        Televisori tv = new Televisori(name, description,price, iva, size, smartOrNot);
                         cart.add(String.valueOf(tv));
                     } else if (categoryChoice.equals("cuffie")) {
                         System.out.println("Inserisci il nome del prodotto: ");
@@ -60,8 +65,13 @@ public class Carrello {
                         BigDecimal iva = scan.nextBigDecimal();
                         System.out.println("Indicami il colore delle cuffie: ");
                         String color = scan.nextLine();
-                        System.out.println("Sono cablate?");
+                        System.out.println("Sono cablate?(y/n)");
                         String  cabledOrNot = scan.nextLine();
+                        if (cabledOrNot.equals("y")){
+                            cabledOrNot = "cabled";
+                        } else if (cabledOrNot.equals("n")) {
+                            cabledOrNot = "wireless";
+                        }
                         Cuffie cuffie = new Cuffie(name,description,price,iva,color,cabledOrNot);
                         cart.add(String.valueOf(cuffie));
                     }else {
@@ -75,7 +85,9 @@ public class Carrello {
                     System.out.println(cart);
                 addOrNot = true;
                 break;
-
+                default:
+                    System.out.println("Riprova inserendo y/n");
+                    break;
 
             }
             }

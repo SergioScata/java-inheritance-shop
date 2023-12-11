@@ -25,10 +25,6 @@ private String smartOrNot;
     public Televisori(String name, String description, BigDecimal price, BigDecimal iva, int size, String smartOrNot) {
         super(name, description, price, iva);
         this.size = size;
-        if (smartOrNot.equals("y")){
-            this.smartOrNot = "smart";
-        } else if (smartOrNot.equals("n")) {
-            this.smartOrNot = "wireless";
-        }
+        this.smartOrNot = smartOrNot;
     }
 }

@@ -25,12 +25,6 @@ public class Cuffie extends Prodotto{
     public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, String color, String cabledOrNot) {
         super(name, description, price, iva);
         this.color = color;
-        if (cabledOrNot.equals("y")){
-            this.cabledOrNot = "cabled";
-        } else if (cabledOrNot.equals("n")) {
-           this.cabledOrNot = "wireless";
-        }else  {
-            System.out.println("Risposta non valida");
-        }
+        this.cabledOrNot = cabledOrNot;
     }
 }
