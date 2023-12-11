@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Cuffie extends Prodotto{
     private String color;
-    private String cabledOrNot;
+    private Boolean cabledOrNot;
 
     public String getColor() {
         return color;
@@ -14,15 +14,15 @@ public class Cuffie extends Prodotto{
         this.color = color;
     }
 
-    public String getCabledOrNot() {
+    public Boolean getCabledOrNot() {
         return cabledOrNot;
     }
 
-    public void setCabledOrNot(String cabledOrNot) {
+    public void setCabledOrNot(Boolean cabledOrNot) {
         this.cabledOrNot = cabledOrNot;
     }
 
-    public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, String color, String cabledOrNot) {
+    public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, String color, Boolean cabledOrNot) {
         super(name, description, price, iva);
         this.color = color;
         this.cabledOrNot = cabledOrNot;

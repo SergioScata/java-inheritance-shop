@@ -45,12 +45,12 @@ public class Carrello {
                         BigDecimal iva = scan.nextBigDecimal();
                         System.out.println("Inserisci le dimensioni del televisore in pollici: ");
                         int size = Integer.parseInt(scan.next());
-                        System.out.println("E' un televisore smart?(y/n)");
-                        String smartOrNot = scan.nextLine();
-                        if (smartOrNot.equals("y")){
-                            smartOrNot = "smart";
-                        } else if (smartOrNot.equals("n")) {
-                            smartOrNot = "non smart";
+                        System.out.println("E' un televisore smart?(true/false)");
+                        Boolean smartOrNot = scan.nextBoolean();
+                        if (smartOrNot == true){
+                            System.out.println("E' smart");
+                        }else {
+                            System.out.println("Se non è zuppa è pan bagnato");
                         }
                         Televisori tv = new Televisori(name, description,price, iva, size, smartOrNot);
                         cart.add(String.valueOf(tv));
@@ -66,11 +66,11 @@ public class Carrello {
                         System.out.println("Indicami il colore delle cuffie: ");
                         String color = scan.nextLine();
                         System.out.println("Sono cablate?(y/n)");
-                        String  cabledOrNot = scan.nextLine();
-                        if (cabledOrNot.equals("y")){
-                            cabledOrNot = "cabled";
-                        } else if (cabledOrNot.equals("n")) {
-                            cabledOrNot = "wireless";
+                        Boolean  cabledOrNot = scan.nextBoolean();
+                        if (cabledOrNot == true){
+                            System.out.println("E' cablato");
+                        }else {
+                            System.out.println("Se non è zuppa è pan bagnato");
                         }
                         Cuffie cuffie = new Cuffie(name,description,price,iva,color,cabledOrNot);
                         cart.add(String.valueOf(cuffie));
@@ -82,7 +82,7 @@ public class Carrello {
 
                 case "n":
                 System.out.println("Ok ecco a te i tuoi prodotti!");
-                    System.out.println(cart);
+                    System.out.println(cart.toString());
                 addOrNot = true;
                 break;
                 default:
