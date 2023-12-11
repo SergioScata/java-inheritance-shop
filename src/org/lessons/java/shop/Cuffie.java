@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Cuffie extends Prodotto{
     private String color;
-    private Boolean cabledOrNot;
+    private String cabledOrNot;
 
     public String getColor() {
         return color;
@@ -14,17 +14,23 @@ public class Cuffie extends Prodotto{
         this.color = color;
     }
 
-    public Boolean getCabledOrNot() {
+    public String getCabledOrNot() {
         return cabledOrNot;
     }
 
-    public void setCabledOrNot(Boolean cabledOrNot) {
+    public void setCabledOrNot(String cabledOrNot) {
         this.cabledOrNot = cabledOrNot;
     }
 
-    public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, String color, Boolean cabledOrNot) {
+    public Cuffie(String name, String description, BigDecimal price, BigDecimal iva, String color, String cabledOrNot) {
         super(name, description, price, iva);
         this.color = color;
-        this.cabledOrNot = cabledOrNot;
+        if (cabledOrNot.equals("y")){
+            this.cabledOrNot = "cabled";
+        } else if (cabledOrNot.equals("n")) {
+           this.cabledOrNot = "wireless";
+        }else  {
+            System.out.println("Risposta non valida");
+        }
     }
 }

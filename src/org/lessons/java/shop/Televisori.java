@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Televisori extends Prodotto{
 private int size;
-private Boolean smartOrNot;
+private String smartOrNot;
 
     public int getSize() {
         return size;
@@ -14,17 +14,21 @@ private Boolean smartOrNot;
         this.size = size;
     }
 
-    public Boolean getSmartOrNot() {
+    public String getSmartOrNot() {
         return smartOrNot;
     }
 
-    public void setSmartOrNot(Boolean smartOrNot) {
+    public void setSmartOrNot(String smartOrNot) {
         this.smartOrNot = smartOrNot;
     }
 
-    public Televisori(String name, String description, BigDecimal price, BigDecimal iva, int size, Boolean smartOrNot) {
+    public Televisori(String name, String description, BigDecimal price, BigDecimal iva, int size, String smartOrNot) {
         super(name, description, price, iva);
         this.size = size;
-        this.smartOrNot = smartOrNot;
+        if (smartOrNot.equals("y")){
+            this.smartOrNot = "smart";
+        } else if (smartOrNot.equals("n")) {
+            this.smartOrNot = "wireless";
+        }
     }
 }

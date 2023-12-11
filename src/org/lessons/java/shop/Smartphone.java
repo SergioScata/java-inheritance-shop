@@ -3,7 +3,7 @@ package org.lessons.java.shop;
 import java.math.BigDecimal;
 import java.util.Random;
 
-public class Smartphone extends Prodotto{
+public class Smartphone extends Prodotto {
     private int imeiCode;
     private int memory;
 
@@ -26,9 +26,19 @@ public class Smartphone extends Prodotto{
     }
 
 
-
-    private int randomCode(){
+    private int randomCode() {
         Random random = new Random();
         return random.nextInt(1000000, 9999999);
     }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "imeiCode=" + imeiCode +
+                ", memory=" + memory
+                ;
+    }
 }
+
+
+

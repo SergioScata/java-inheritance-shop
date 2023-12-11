@@ -64,4 +64,15 @@ public class Prodotto {
         BigDecimal ivaOnPrice = price.multiply(iva);
         return price.add(ivaOnPrice).setScale(2, RoundingMode.HALF_EVEN);
     }
+
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", iva=" + iva +
+                '}';
+    }
 }
