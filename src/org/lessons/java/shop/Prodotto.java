@@ -2,6 +2,7 @@ package org.lessons.java.shop;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Random;
 
 public class Prodotto {
     private int code;
@@ -11,6 +12,7 @@ public class Prodotto {
     private BigDecimal iva;
 
     public Prodotto(String name, String description, BigDecimal price, BigDecimal iva) {
+        code = randomCode();
         this.name = name;
         this.description = description;
         this.price = price;
@@ -53,6 +55,11 @@ public class Prodotto {
         return iva;
     }
 
+
+    private int randomCode(){
+       Random random = new Random();
+       return random.nextInt(100000, 999999);
+    }
     public BigDecimal getFullPrice(){
         BigDecimal ivaOnPrice = price.multiply(iva);
         return price.add(ivaOnPrice).setScale(2, RoundingMode.HALF_EVEN);
